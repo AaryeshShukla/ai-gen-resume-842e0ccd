@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaryesh Shukla - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #080b10;
+            --text-color: #e0e0e0;
+            --primary-color: #6a5acd;
+            --secondary-color: #00bcd4;
+            --highlight-color: rgba(106, 92, 208, 0.5);
+            --border-radius: 12px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text-color);
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .skills, .projects, .experience, .contact {
+            margin: 40px 0;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .skill {
+            margin: 10px 0;
+        }
+        .progress {
+            background: #ddd;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 20px;
+        }
+        .progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+            transition: width 0.5s;
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .project-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px var(--highlight-color);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            width: 80%;
+            max-width: 600px;
+        }
+        .close {
+            cursor: pointer;
+            color: red;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form input, .contact-form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+        }
+        .contact-form button {
+            padding: 10px;
+            border: none;
+            border-radius: var(--border-radius);
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover {
+            background: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aaryesh Shukla</h1>
+        <nav>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="hero">
+            <h2>Welcome to My Resume</h2>
+            <p>Developer | Designer | Data Scientist</p>
+        </section>
+        <section id="education" class="education">
+            <h3>Education</h3>
+            <ul>
+                <li>Diploma in Programming from IIT Madras (May - 2026)</li>
+                <li>B. Tech. (CS) IIST (Affiliated to RGPV) (Pursuing, 2023-2027)</li>
+                <li>B.S. (Data Science) IIT Madras (Pursuing, 2023-2027)</li>
+                <li>Higher Secondary School VIS Indore (M.P.) (2022-2023)</li>
+            </ul>
+        </section>
+        <section id="skills" class="skills">
+            <h3>Skills Summary</h3>
+            <div class="skill">
+                <h4>Languages</h4>
+                <p>Python, SQL, HTML/CSS, JAVA, JavaScript, C, C++</p>
+            </div>
+            <div class="skill">
+                <h4>Frameworks</h4>
+                <p>NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow, Flask, Vue.js</p>
+            </div>
+            <div class="skill">
+                <h4>Tools</h4>
+                <p>Excel, PowerPoint, MySql, SQLite</p>
+            </div>
+            <h4>Skill Proficiency</h4>
+            <div class="progress">
+                <div class="progress-bar" style="width: 90%;">Python</div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width: 80%;">JavaScript</div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width: 75%;">Flask</div>
+            </div>
+        </section>
+        <section id="projects" class="projects">
+            <h3>Projects</h3>
+            <div class="project-card" onclick="openModal('Celebrity Image Classifier', 'Built an end-to-end machine learning web application that predicts the celebrity in an uploaded image. Created and cleaned a custom image dataset by scraping and organizing labelled celebrity photos. Achieved ~85% test accuracy using SVM with Haar wavelet feature extraction across 6 celebrity classes.', 'https://github.com/AaryeshShukla/Celebrity-Classifier')">
+                <h4>Celebrity Image Classifier</h4>
+                <p>Machine Learning, Flask</p>
+            </div>
+            <div class="project-card" onclick="openModal('QUIZ MASTER V-1', 'Developed a full-stack multi-user quiz platform using Flask, featuring admin and user dashboards.', 'https://github.com/AaryeshShukla/Quiz-Master---V1')">
+                <h4>QUIZ MASTER V-1</h4>
+                <p>Python, Flask</p>
+            </div>
+            <div class="project-card" onclick="openModal('MediCare Pro', 'Built a full-stack hospital management web application with role-based dashboards for Admins, Doctors, and Patients. Implemented JWT authentication, appointment booking, treatment records, and real-time system analytics.', 'https://github.com/AaryeshShukla/MediCare-Pro-Hospital-Management-System')">
+                <h4>MediCare Pro</h4>
+                <p>Python, Flask, Vue.js</p>
+            </div>
+        </section>
+        <section id="experience" class="experience">
+            <h3>Experience</h3>
+            <ul>
+                <li>Research work on Data Science in Healthcare</li>
+                <li>Participated in various workshops and hackathons</li>
+            </ul>
+        </section>
+        <section id="contact" class="contact">
+            <h3>Contact Me</h3>
+            <form class="contact-form" onsubmit="submitForm(event)">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h4 id="modal-title"></h4>
+            <p id="modal-description"></p>
+            <a id="modal-link" href="#" target="_blank">View Project</a>
+        </div>
+    </div>
+    <script>
+        function openModal(title, description, link) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal-link').href = link;
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        function submitForm(event) {
+            event.preventDefault();
+            alert('Message sent!');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
